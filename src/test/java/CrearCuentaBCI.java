@@ -49,6 +49,7 @@ public class CrearCuentaBCI {
         txtNumero.sendKeys("88929494");
         Thread.sleep(5000);
 
+
         WebElement txtEmail;
         By bytxtEmail = By.xpath("/html/body/app-root/div/div/div/app-datos-basicos/form/div/div[1]/validador-correo/form/div[1]/input");
         txtEmail = driver.findElement(bytxtEmail);
