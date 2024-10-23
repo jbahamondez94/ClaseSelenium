@@ -22,9 +22,14 @@ public class CrearCuentaBCI {
         //espere 5 segundos
         Thread.sleep(10000);
 
+        //switch To IFrame using Web Element
+        WebElement iframe = driver.findElement(By.id("myFrame"));
+        //Switch to the frame
+        driver.switchTo().frame(iframe);
+
         //formulario
         WebElement txtRut;
-        By bytxtRut = By.className("\"//input[@type='text'][1]\"");
+        By bytxtRut = By.xpath("/html/body/app-root/div/div/div/app-datos-basicos/form/div/bci-wk-input-text[1]/input");
         txtRut = driver.findElement(bytxtRut);
         txtRut.click();
         txtRut.sendKeys("111111111");
@@ -55,7 +60,7 @@ public class CrearCuentaBCI {
         txtEmail2.sendKeys("asdq@gmail.com");
 
         WebElement chkTerminosyCondiciones;
-        By bychkTerminosyCondiciones = By.xpath("/html/body/app-root/div/div/div/app-datos-basicos/form/div/div[2]/bci-wk-checkbox");
+        By bychkTerminosyCondiciones = By.xpath("//bci-wk-checkbox[@formcontrolname='checkPoliticas']/input");
         chkTerminosyCondiciones = driver.findElement(bychkTerminosyCondiciones);
         chkTerminosyCondiciones.click();
 
